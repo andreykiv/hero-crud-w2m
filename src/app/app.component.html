@@ -1,0 +1,13 @@
+<div *ngIf="loading$ | async" class="spinner-container">
+  <mat-progress-spinner
+    color="primary"
+    class="spinner"
+    mode="indeterminate">
+  </mat-progress-spinner>
+</div>
+
+<div class="app-container">
+  <router-outlet></router-outlet>
+</div>
+
+

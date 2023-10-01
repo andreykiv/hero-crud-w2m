@@ -1,0 +1,17 @@
+<div class="heroes-container">
+  <div class="table-container">
+    <app-table
+    *ngIf="heroes$ | async as heroes"
+    [title]="'Heroes on duty'"
+    [data]="heroes"
+    [columnDef]="columns"
+    (emitAddNewClicked)="handleAddNewClicked()"
+    (emitEditClicked)="handleEditClicked($event)"
+    (emitDeletedClicked)="handleDeleteClicked($event)"
+  >
+      <app-hero-search></app-hero-search>
+    </app-table>
+  </div>
+</div>
+
+
