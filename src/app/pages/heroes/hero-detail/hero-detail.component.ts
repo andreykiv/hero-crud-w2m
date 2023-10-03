@@ -52,7 +52,9 @@ export class HeroDetailComponent extends BaseComponent implements OnInit  {
     this.form.patchValue({...this.form.value, name: this.form.get('name')?.value.toUpperCase()})
 
     const addHero$ = this.heroService.addHero(this.form.value).pipe(finalize(() => this.location.back()));
-    const updateHero$ = this.id ? this.heroService.updateHero({id: +this.id, ...this.form.value}).pipe(finalize(() => this.location.back())) : null;
+    const updateHero$ = this.id ?
+      this.heroService.updateHero({id: +this.id, ...this.form.value}).pipe(finalize(() => this.location.back()))
+      : null;
 
     if (this.id && updateHero$){
       this.addSubscription(
@@ -62,9 +64,11 @@ export class HeroDetailComponent extends BaseComponent implements OnInit  {
       )
 
     } else {
-      addHero$.subscribe(next => {
-        console.log('Next when addHero: ', next)
-      })
+      this.addSubscription(
+        addHero$.subscribe(next => {
+          console.log('Next when addHero: ', next)
+        })
+      )
     }
   }
 

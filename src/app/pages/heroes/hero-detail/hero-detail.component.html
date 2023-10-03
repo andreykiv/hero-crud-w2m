@@ -22,7 +22,7 @@
   </mat-form-field>
 
   <div class="btns">
-    <button [routerLink]="['/heroes']" routerLinkActive="router-link-active" mat-raised-button color="primary" type="submit">Go back</button>
+    <button [routerLink]="['/heroes']" routerLinkActive="router-link-active" mat-raised-button color="primary" type="button">Go back</button>
     <button [disabled]="!form.valid" style="margin-left: 1rem"  (click)="onSubmit()" mat-raised-button color="primary" type="submit">Save</button>
   </div>
 

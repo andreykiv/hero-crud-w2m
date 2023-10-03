@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ColumnDef } from 'src/app/shared/components/table/table.component';
 import { Hero } from './model/hero';
 import { Router } from '@angular/router';
 import { HeroService } from './services/hero.service';
@@ -7,6 +6,7 @@ import { Observable } from 'rxjs';
 import { BaseComponent } from 'src/app/shared/components/base/base.component';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/shared/components/dialog/dialog.component';
+import { ColumnDef } from 'src/app/shared/components/table/model/column';
 
 @Component({
   selector: 'app-heroes',
@@ -16,7 +16,6 @@ import { DialogComponent } from 'src/app/shared/components/dialog/dialog.compone
 export class HeroesComponent extends BaseComponent {
 
   heroes$: Observable<Hero[]>
-
 
   public columns: ColumnDef[] = [
     {
@@ -48,7 +47,6 @@ export class HeroesComponent extends BaseComponent {
       super();
       this.heroes$ = this.heroService.getHeroes();
   }
-
 
   handleAddNewClicked(){
     this.router.navigateByUrl(`/detail/`)

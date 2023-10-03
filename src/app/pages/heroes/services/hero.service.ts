@@ -47,7 +47,6 @@ export class HeroService {
 
   /** POST: add a new hero to the server */
   addHero(hero: Hero): Observable<Hero> {
-    console.log('add HERO: ', hero);
     return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions).pipe(
       catchError(this.handleError<Hero>('addHero'))
     );
@@ -56,7 +55,6 @@ export class HeroService {
   /** DELETE: delete the hero from the server */
   deleteHero(id: number): Observable<Hero> {
     const url = `${this.heroesUrl}/${id}`;
-
     return this.http.delete<Hero>(url, this.httpOptions).pipe(
       catchError(this.handleError<Hero>('deleteHero'))
     );
@@ -64,7 +62,6 @@ export class HeroService {
 
   /** PUT: update the hero on the server */
   updateHero(hero: Hero): Observable<any> {
-    console.log('update HERO: ', hero)
     return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
       catchError(this.handleError<any>('updateHero'))
     );
@@ -80,9 +77,7 @@ export class HeroService {
    */
     private handleError<T>(operation = 'operation', result?: T) {
       return (error: any): Observable<T> => {
-
         console.error(error); // log to console error
-
         // Let the app keep running by returning an empty result.
         return of(result as T);
       };
