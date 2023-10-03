@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ColumnDef } from 'src/app/shared/components/table/table.component';
 import { Hero } from './model/hero';
 import { Router } from '@angular/router';
 import { HeroService } from './services/hero.service';
@@ -7,6 +6,7 @@ import { Observable } from 'rxjs';
 import { BaseComponent } from 'src/app/shared/components/base/base.component';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/shared/components/dialog/dialog.component';
+import { ColumnDef } from 'src/app/shared/components/table/model/column';
 
 @Component({
   selector: 'app-heroes',

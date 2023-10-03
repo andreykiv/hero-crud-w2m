@@ -6,13 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
-
-export interface ColumnDef {
-  header: string;
-  field: string;
-  type: string; // action/no-action column
-}
-
+import { ColumnDef } from './model/column';
 @Component({
   standalone: true,
   selector: 'app-table',
