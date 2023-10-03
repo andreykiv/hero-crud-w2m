@@ -1,7 +1,17 @@
 # SuperHeroesApp
+## Puntos a tener en cuenta
+
+• Angular Material como apoyo visual.
+• Rutas y navegación de la página.
+• Interceptor para mostrar un elemento “loading” mientras se realiza alguna
+operación como “borrado” o “edición”.
+• Directiva para que al crear o editar en la caja de texto del nombre del
+héroe, siempre se muestre en mayúscula.
+• Uso de mockserver para poder implementar las llamadas HTTP sin un
+backend.
+• Comunicación entre componentes orientada a eventos
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
-
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
