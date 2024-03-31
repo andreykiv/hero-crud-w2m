@@ -64,13 +64,12 @@ export class HeroesComponent extends BaseComponent {
     const dialogRef = this.dialog.open(DialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      if(!result){
-        return
+      if (!result){
+        return null;
       }
 
       this.addSubscription(
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        this.heroService.deleteHero(id).subscribe(_ =>{
+        this.heroService.deleteHero(id).subscribe(() =>{
           this.heroes$ = this.heroService.getHeroes();
         })
       )
